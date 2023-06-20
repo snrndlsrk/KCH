@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<link rel="stylesheet" href="./static/css/table.css">
+<script src="./static/js/table.js"></script>
+</head>
+<body>
+
+<div>
+    <input type="text" id="result">
+</div>
+
+    <table>
+        <tr>
+            <td onclick="select(7)">7</td>
+            <td onclick="select(8)">8</td>
+            <td onclick="select(9)">9</td>
+            <td onclick="select('+')">+</td>
+        </tr>
+        <tr>
+            <td onclick="select(4)">4</td>
+            <td onclick="select(5)">5</td>
+            <td onclick="select(6)">6</td>
+            <td onclick="select('-')">-</td>
+        </tr>
+        <tr>
+            <td onclick="select(1)">1</td>
+            <td onclick="select(2)">2</td>
+            <td onclick="select(3)">3</td>
+            <td onclick="select('*')">*</td>
+        </tr>
+        <tr>
+            <td onclick="select(0)" colspan="2">0</td>
+            <td onclick="select('=')">=</td>
+            <td onclick="select('/')">/</td>
+        </tr>
+        <!-- onclick 에서 on과 click사이에 dbl을 붙히면 더블클릭해야 작동한다.-->
+    </table>
+</body>
+</html>

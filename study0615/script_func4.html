@@ -1,0 +1,30 @@
+<!-- script_func4.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보</title>
+
+    <link rel="stylesheet" href="./static/css/rps.css">
+    <script src="./static/js/rps.js"></script>
+</head>
+<body>
+
+<div class="box">
+        <div class="com">
+            <img src="./static/image/scissors.png" id="game_image">
+        </div>
+    <div class="res">
+        <b> com vs user <button onclick="start()">START</button></b>
+        <b id="result"></b>
+    </div>
+    <div class="user">
+        <p onclick="select('scissors')"><img src="./static/image/scissors.png"></p>
+        <p onclick="select('rock')"><img src="./static/image/rock.png"></p>
+        <p onclick="select('paper')"><img src="./static/image/paper.png"></p>
+    </div>
+</div>
+</body>
+</html>

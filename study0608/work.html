@@ -1,0 +1,81 @@
+<!-- work.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도형 PTSD 올 꺼 같아~~~!!!</title>
+
+    <script>
+        var shape = prompt("1.정사각형 2.직각사각형 3.원형");
+        var background = prompt("색깔을 입력하세요: 빨강, 파랑, 노랑, 핑크");
+        var width;
+        var height;
+        var circle = "border-radius: 100%;";
+
+        if (shape === "원형") {
+            var radius = prompt("반지름을 입력하세요");
+            circle += "width: " + radius + "px; height: " + radius + "px;";
+            if (background === "빨강") {
+                circle += "background: red;";
+            } 
+            else if (background === "파랑") {
+                circle += "background: blue;";
+            } 
+            else if (background === "노랑") {
+                circle += "background: yellow;";
+            } 
+            else if (background === "핑크") {
+                circle += "background: pink;";
+            }
+            document.write("<div style='" + circle + "'></div>");
+        } 
+        else if (shape === "정사각형") {
+            width = prompt("너비를 입력하세요 (100px 이상):");
+            height = width;
+            if (background === "빨강") {
+                document.write("<div class='빨강'></div>");
+            } 
+            else if (background === "파랑") {
+                document.write("<div class='파랑'></div>");
+            } 
+            else if (background === "노랑") {
+                document.write("<div class='노랑'></div>");
+            } 
+            else if (background === "핑크") {
+                document.write("<div class='핑크'></div>");
+            }
+        } 
+        else if (shape === "직각사각형") {
+            width = prompt("너비를 입력하세요 (100px 이상):");
+            height = prompt("높이를 입력하세요 (100px 이상):");
+            if (background === "빨강") {
+                document.write("<div class='직각빨강'></div>");
+            } 
+            else if (background === "파랑") {
+                document.write("<div class='직각파랑'></div>");
+            } 
+            else if (background === "노랑") {
+                document.write("<div class='직각노랑'></div>");
+            } 
+            else if (background === "핑크") {
+                document.write("<div class='직각핑크'></div>");
+            }
+        }
+    </script>
+</head>
+</head>
+<body>
+    <style>
+        .빨강 { background: red; width:100px; height: 100px; }
+        .파랑 { background: blue; width:100px; height: 100px; }
+        .노랑 { background: yellow; width:100px; height: 100px; }
+        .핑크 { background: pink; width:100px; height: 100px; }
+        .직각빨강 { background: red; width:200px; height: 100px; }
+        .직각파랑 { background: blue; width:200px; height: 100px; }
+        .직각노랑 { background: yellow; width:200px; height: 100px; }
+        .직각핑크 { background: pink; width:200px; height: 100px; }
+    </style>
+</body>
+</html>

@@ -1,0 +1,23 @@
+table tr td{
+    border:1px solid black;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    font-size: 50px;
+}
+
+table tr td:last-child{
+    background: green;
+}
+table tr:last-child td:nth-last-child(2){
+    background: yellow;
+}
+#result{
+    width: 400px;
+    height: 50x;
+    font-size: 30px;
+    border: 0;
+    border-top: 7px solid red;
+    border-bottom: 7px solid red;
+    outline: none;
+}

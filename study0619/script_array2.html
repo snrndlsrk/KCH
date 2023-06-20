@@ -1,0 +1,26 @@
+<!-- script_array2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    var arr1 = new Array();
+    for( var i=1; i<=5; i++){
+    arr1.push(Math.floor(Math.random()*50)+1);
+}
+    for(i=0; i<arr1.length; i++){
+        if(arr1[i] % 2 === 0)
+    document.write(arr1[i]+"<br>");
+}
+
+// 배열에 저장된 5개 데이터 중 짝수만 출력하시오.
+
+</script>
+</head>
+<body>
+    <div id="output"></div>
+</body>
+</html>

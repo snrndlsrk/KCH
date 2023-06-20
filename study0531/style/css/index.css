@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap');
+
+*, *:before, *:after{
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dd{
+    margin: 0;
+    padding: 0;
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+a{
+    text-decoration: none; /*밑줄*/
+    color: inherit; /* 상속 -> 부모쪽에서 컬러를 상속받는다.*/
+}
+
+#wrap{
+    max-width: 1080px;
+    width: 90%;
+    margin: 0 auto;
+}
+#header{
+    position: sticky;
+    top: 0;
+    background: #fff;
+     display: flex;
+     justify-content: space-between;
+     padding: 7px 20px;
+     border-bottom: 1px solid #d0d0d0;
+}
+.header-logo{
+    width: 100px;
+}
+.header-nav{
+    display: flex;
+    align-items: center;
+}
+.header-nav a{
+    margin-left: 15px;
+}
+.header-nav a:nth-child(2){ /*a태그 안에 div가 들어와도 a태그 중에서 2번째이기에 child안에 2 라고 적는다.*/
+    display: flex;
+    align-items: center;
+    padding: 7px 17px;
+    color: #fff;
+    background: #000;
+    border-radius: 7px;
+}
+.header-nav a:nth-child(2) i{
+    padding-left: 5px;
+}
+#main{
+    padding: 15px 0;
+
+}
+#flex{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 20px; /*가로*/
+    row-gap: 20px; /*세로*/
+}
+.flexitem{
+    width: 30%;
+    max-width: 300px;
+    border: 1px solid #d0d0d0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product-content{
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+}
+.product-info{
+    font-size: 13px;
+}
+
+.like{
+    align-self: flex-end;
+}
+/*
+#main{
+    display: flex;
+    max-width: 100%;
+    margin: 10px;
+    padding: 0;
+
+}
+#flex{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 20px;
+}
+.flexitem{
+    display: flex;
+    border: 1px solid #494949;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom: 3.3%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.product-img{
+    max-width: 300px;
+    max-height: 300px;
+    
+}
+.product-content{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.like{
+    align-self: flex-end;
+}
+*/
+
+/*
+@media 조건{
+    스타일속성: 속성값;
+}
+
+@media 키워드 논리연산자 (조건){
+
+}
+키워드 - all, screen, print, tv, tty, projection 등등
+논리연산자 - and, or
+   and - 양쪽 조건이 모두 참인경우에 참
+   or - 한쪽의 조건만 참이면 참
+조건 - max-width(이하), min-width(이상)
+      세로모드 : orientation:portrait
+      가로모드 : orientation:landscape
+      너비와 높이 비율
+       aspect-ratio:6/4  ->  너비가6 높이가4  6:4비율
+      색상 비트수( 색상 표현 정도 )
+       color:8  -> 색상이 8비트 라면  
+
+!참고 : 반응형 제작할 때 두 가지 방법으로 제작한다.
+    1. 모바일 환경에서 PC 환경으로 제작 - min(점점 커지기에)
+       
+    2. PC환경에서 모바일 환경으로 제작 - max(점점 작아지기에)
+       
+    *모바일 먼저 만들고 PC를 만드는게 개발자 입장에서는 편하다.
+*/
+
+
+ @media screen and (max-width:768px){   /* 너비가 800이하 라면 */
+    #flex{
+        column-gap: 15px;
+    }
+    .flexitem{
+        width: 40%;
+    }
+    
+}
+
+@media screen and (max-width:576px){
+    .flexitem{
+        width: 75%;
+    }
+}

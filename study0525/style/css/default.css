@@ -1,0 +1,163 @@
+body{
+    /* body에 여백을 제거하여 화면에 꽉채워서 사용하려고 합니다.요. */
+    padding: 0;
+    margin: 0;
+    background-color: #2e313d;
+    color: #e6e6e6;
+    position: relative;
+}
+
+#wrap{
+    position: relative;
+    width: 100%;
+}
+#header{ /* 가운데로 오게 하려면 너비가 있어야함.*/
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #878c9e;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;  /*부모태그에게 해야하고 다른애들에게 하면 안됨.*/
+    /*overflow:hidden 내 안에 있는 것은 화면에 표시하고 내 영역 바깥에 있는 건 감춰두는 것.*/
+    padding: 20px 0;
+    font-size: 25px;
+    justify-content: space-around;
+    /* 이건 flex나 grid만 해당된다.*/
+}
+#section{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 15px;
+}
+.section_left{
+    width: 80%;
+    height: 800px;
+    /*background: #a1a5b6;*/
+}
+.section_right{
+    width: 20%;
+    height: 400px;
+    /*background:skyblue;*/
+    
+}
+.section_left .mainImage{
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+.section_left .mainImage img{
+    width: 100%;
+}
+.notice_adImg{
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+.notice_adImg .notice_box{
+    width: 70%;
+    position: relative;
+}
+.notice_adImg .notice_box .notice_list{
+/*공지사항 ul태그*/
+   list-style-type: circle;
+   /*list-style-image: url('../image/listIcon.png');*/ /*이미지 자체의 크기를 줄여서 사용하던지 아니면 list-style-type: none;으로 설정한다 */
+   list-style-type: none;
+}
+.notice_adImg .notice_box .notice_list li::before{
+    content: ''; /*아무것도 안넣어도 적어둬야 한다.*/
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    background-image: url('../image/listIcon.png');
+    background-size: 15px;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+    /*원래는 존재하지 않지만 가상으로 값을 넣어주는 것이 before다. 새로운 값 추가가 content.*/ 
+}
+.notice_adImg .notice_box .notice_list li{
+/* 공지사항 li태그 */    
+    padding: 5px 0;
+}
+.notice_adImg .notice_box .notice_more{
+/* 공지사항에 more 텍스트 있는 h5 */
+   position: absolute;
+   top: 0;
+   right: 20px;    
+}
+.notice_adImg .adImg_box{
+    width: 30%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.notice_adImg .adImg_box img{
+    width: 100%;
+}
+
+.coop_box{
+    width: 100%;
+}
+.coop_box .imageList{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.coop_box .imageList img{
+    width: 140px;
+}
+.login_wrap{
+    text-align: center;
+    border: 1px solid #cbcbcb;
+    height: 120px;    
+}
+.subMenu_wrap{
+    margin-top: 50px;
+    padding: 10px;
+} 
+.subMenu_list{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+.list{
+    padding: 5px;
+}
+.subMenu_wrap .subMenu_11st li{
+    padding: 10px;
+}
+.subMenu_wrap .subMenu_list li:hover{
+    background: gray;
+    color: black;
+}
+#footer{
+    width: 1200px;
+    margin: 0 auto;
+}
+.ft_menu{
+    width: 100%;
+    padding: 30px;
+}
+.ft{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* 기본 한 줄로 나열 */
+}
+.ft li{
+    padding-right: 30px;
+}
+
+.address{
+    padding: 0 30px;
+}
+.copyright{
+    padding: 5px 30px;
+}
+    /* flot을 주면 header div선 기준이 들어가게 됨. 자리에 위치해 있긴 하지만 문서의 흐름이 빠져서 맨 밑으로 간다.
+    부모 뿐만 아니라 다른 애들에게 영향을 줘서 안쓴다.*/

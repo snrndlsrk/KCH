@@ -1,0 +1,58 @@
+<!-- te work.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+
+var shape = prompt("정사각형, 직각사각형, 원형"); // 1번내용
+var bg = prompt("빨강, 파랑, 노랑, 핑크"); // 2번내용
+
+var width = parseInt(prompt("너비 : 100px 이상 값 입력")); // 여기부터
+if( shape === "원형"){
+    width = width*2;
+} // 여기까지가 3번내용
+
+var height=0;
+if ( shape!="원형"){
+    height=parseInt(prompt("높이 100px 이상 입력"));
+} // 여기까지가 4번내용
+/* if문에서 변수를 두면 그 안에서 해결해야지 중괄호 밖에 적으면 안됨. 그래서 if문 밖에 변수를 주셈. */
+
+if( shape==="정사각형" && (width!=height)){ // 여기부터
+    alert("정사각형을 만들기 위해서는 너비와 높이가 같아야 합니다.");
+    width=parseInt(prompt("너비 : 100px 이상 값 입력"));
+    height=parseInt(prompt("높이 100px 이상 입력"));
+} // 여기까지 5번내용
+
+var styles="";
+if( shape === "원형")
+    styles+="border-radius:100%;"; // styles = styles + "dsadsadas";
+/* if문 한줄에서는 중괄호 {} 생략 가능 */
+
+if(bg==="빨강")
+    styles+="background:red;";
+else if(bg==="파랑")
+    styles+="background:blue;";
+else if(bg==="노랑")
+    styles+="background:yellow;";
+else if(bg==="핑크")
+    styles+="background:pink;";
+
+styles+="width:"+width+"px;";
+if( shape==="원형")
+    styles+="height:"+width+"px;"; // 원은 너비와 높이가 같으니까
+else
+    styles+="height:"+height+"px;";
+
+document.write("<div style="+styles+"></div>");
+</script>
+</head>
+<body>
+    
+</body>
+</html>

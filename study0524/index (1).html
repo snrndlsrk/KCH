@@ -1,0 +1,150 @@
+<!--index.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실내동물원</title>
+
+    
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        #wrap{
+            width: 1250px;
+        }
+        #wrap tr td{
+            border: 0px solid #ecf008;
+            position: relative;
+        }
+
+
+        .head{
+            width: 1200px;
+            height: 0px;
+            text-align: right;
+            font-size: 15px;
+            color: black;
+            cursor: pointer;
+        }
+        .logo_wrap{ width: 150px;}
+        .logo_wrap img{ width: 150px; height: 80px;}
+
+        .menu_list{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+  
+        .menu_list_title{
+            float: left;
+            padding: 0px 50px;
+            font-weight: 800;
+            font-size: 23px;
+        }
+        .menu_list_title:hover{
+            color: rgb(247, 203, 7);
+            cursor: pointer;
+        }
+        .content_wrap{
+            background-image: url('../image/동물원.jpg');
+            height: 1080px;
+        }
+        .content_Text{
+            position: relative;   
+                                 
+            top: 0;   
+            left: 80px; 
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            font-size: 32px;
+            font-weight: 900;
+            font-family: impact;
+            padding-left: 150px;
+        }
+        .mainText{
+            font-weight: 900;
+            font-size: 55px;
+            margin: 0px 0px 30px 68px;
+            color: rgb(247, 203, 7)     
+        }
+        .subText{
+            letter-spacing: 10px;  
+            margin: 100px 200px;
+            color: white;
+            font-size: 150px;    
+        }
+        .whiteText1{
+            text-decoration: none;
+            margin-left: 10px;
+            margin: 20px 90px;
+            font-size: 160px;
+            letter-spacing: 30px;
+        } 
+        .whiteText2{
+            text-decoration: none;
+            margin-left: 10px;
+            font-size: 160px;
+            margin: 0px 0px 100px -80px;
+            letter-spacing: 30px;
+        }
+        .brownText1{
+            font-size: 30px;
+            margin: 0;
+            opacity: 1;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin-left: 103px;
+        }
+        .brownText2{
+            font-size: 30px;
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            
+        }
+     
+    </style>
+</head>
+<body>
+    
+    <table id="wrap">
+        <tr>
+            <td colspan="2" class="head">
+                티켓구매하기 / 검색 / 로그인
+            </td>
+        </tr>
+        <tr>
+            <td class="logo_wrap">
+             
+                <a href="">
+                    <img src="../image/주렁주렁.jpg" alt="로고이미지">
+                </a>
+            </td>
+            <td class="menu_wrap">
+                <ul class="menu_list">
+                    <li class="menu_list_title">탐험안내</li>
+                    <li class="menu_list_title">단체안내</li>
+                    <li class="menu_list_title">이벤트 및 뉴스</li>
+                    <li class="menu_list_title">고객의 소리</li>
+                    <li class="menu_list_title">주렁주렁</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="content_wrap">
+                <ul class="content_Text">
+                    <li class="mainText">하남점 초대형 정글 놀이터</li>
+                    <li class="subText whiteText1">JUNGLE</li>
+                    <li class="subText whiteText2">CHALLENGE</li>
+                    <li class="subText brownText1">정글북의 실사판 트리 하우스</li>
+                    <li class="subText brownText2">12가지 동물을 찾아가는 미션에 도전하라!</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

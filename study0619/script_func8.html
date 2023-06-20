@@ -1,0 +1,41 @@
+<!-- script_func8.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script src="./static/js/func8.js"></script>
+</head>
+<body>
+
+    <!-- 국어, 수학, 영어 점수 input을 입력받기
+    입력받은 점수에 각 과목마다 등급 출력하기
+    세 과목의 평균에도 등급 출력하기
+    100~90이면 A , 89~80 B 79~70 C 나머지는 F -->
+    
+
+    국어 :  <input type="text" id="kor"> <br>
+    수학 :  <input type="text" id="math"> <br>
+    영어 :  <input type="text" id="eng"> <br>
+
+    <button onclick="input()"> 출력하기</button> <br>
+    
+    <div id="result">
+        <p id="kor_grade"></p>
+        <p id="math_grade"></p>
+        <p id="eng_grade"></p>
+        <p id="avg_grade"></p>
+    </div>
+    
+    <!-- 선생님이 하신 것 
+    국어<input type="text" id="kor"> <br>
+    수학<input type="text" id="mat"> <br>
+    영어<input type="text" id="eng"> <br>
+    <button onclick="output()">등급출력</button>
+    <p id="out"></p> -->
+
+</body>
+</html>
