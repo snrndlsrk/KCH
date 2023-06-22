@@ -1,0 +1,27 @@
+#maze {
+    display: grid;
+    grid-template-columns: repeat(21, 20px);
+    grid-template-rows: repeat(17, 20px);
+}
+
+#maze div {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+}
+
+#maze div.wall {
+    background-color: black;
+}
+
+#maze div.path {
+    background-color: white;
+}
+
+#maze div.start {
+    background-color: green;
+}
+
+#maze div.end {
+    background-color: red;
+}

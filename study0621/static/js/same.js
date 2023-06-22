@@ -5,8 +5,9 @@ let image_position=new Array(); // 이미지 출력할 위치 배열
 let isStart=false; // start 버튼 클릭 유무
 let count=0;  // 클릭횟수
 let end_count=0; // 이미지 맞춘 갯수
-let isSame=[]; // 같은 이미지로 선택이 된것인가?
-let selectImg=new Array(); // 현재 선택한 이미지
+let isSame=[]; // 이미지를 선택하여 맞춘 것인지를 저장하는 배열, 
+                // 초기값은 빈 배열로 초기화되며, 이미지를 맞추면 해당 인덱스의 요소가 'true'로 변경.
+let selectImg=new Array(); // 현재 선택한 이미지의 인덱스를 저장하는 배열이다.
 
 window.onload=function(){
     

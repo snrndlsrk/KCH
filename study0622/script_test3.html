@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 혈당 수치에 따라 구분하여 출력하시오
+    70~100 일경우 공복혈당
+    90~140 일경우 식후2시간 혈당
+    정상혈당 수치는 70~100, 90~140이다. 정상수치보다 5.7%미만이면
+    당화혈색소 라고 출력 -->
+    <h2>혈당 수치</h2>
+  <input type="number" id="glucoseLevel" placeholder="혈당 수치를 입력하세요">
+  <button onclick="checkGlucoseLevel()">확인</button>
+  <p id="result"></p>
+
+  <script>
+    function checkGlucoseLevel() {
+      var glucoseLevel = document.getElementById("glucoseLevel").value;
+      var resultElement = document.getElementById("result");
+      var glucoseType = "";
+
+      if (glucoseLevel >= 70 && glucoseLevel <= 100) {
+        glucoseType = "공복혈당";
+      } else if (glucoseLevel >= 90 && glucoseLevel <= 140) {
+        glucoseType = "식후2시간 혈당";
+      }
+
+      if (glucoseLevel < 70 || glucoseLevel > 140) {
+        resultElement.innerHTML = "혈당 수치가 정상 범위를 벗어납니다.";
+      } else {
+        if (glucoseType !== "") {
+          resultElement.innerHTML = "혈당 수치는 " + glucoseType + "입니다.";
+        } else {
+          resultElement.innerHTML = "혈당 수치는 정상입니다.";
+        }
+
+        if (glucoseLevel < 70 * 0.943 || glucoseLevel > 100 * 1.057) {
+          resultElement.innerHTML += " 당화혈색소";
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -4,10 +4,10 @@ body, h1,h2,h3,h4,h5, p{
 }
 
 #wrap{
-     width:80%;
-     max-width:850px;
-     min-width:400px;
-     margin:20px auto;
+    width:80%;
+    max-width:850px;
+    min-width:400px;
+    margin:20px auto;
 }
 #start{
     text-align: center;

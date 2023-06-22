@@ -1,0 +1,17 @@
+h1 {
+    text-align: center;
+}
+
+#game {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#userInput {
+    padding: 5px;
+}
+
+button {
+    padding: 5px 10px;
+    margin-top: 10px;
+}
