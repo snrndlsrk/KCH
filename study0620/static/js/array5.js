@@ -13,6 +13,7 @@ function init(){ //초기화
     //중복없이 랜덤값 넣기
     //indexOf를 이용해서 -1이 나오면 일치하는게 없다ㅏ.
     //  즉 중복되는 숫자가 없다는 뜻이니까  배열에저장
+    // 인덱스가 0부터 시작이니까 그거보다 작은것중에 가장 큰 것인 -1 부터 함.
     num.push(Math.floor(Math.random()*10)+1 );
     for(var i=1; i<=3; i++){
         var temp = Math.floor(Math.random()*10)+1;
