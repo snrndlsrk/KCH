@@ -1,0 +1,21 @@
+#game_start{
+    width: 520px;
+    height: 200px;
+    text-align: center;
+    font-size: 30px;
+    background: green;
+    font-weight: 1000;
+    justify-content: flex-end;
+}
+.num{
+    text-align: center;
+    border:10px solid black; 
+    width:80px; 
+    height:80px;
+    border-radius: 10%;
+    font-size: 20px;
+
+}
+.check{
+    background:red;
+}
