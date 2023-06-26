@@ -46,7 +46,7 @@ function choice_num(){
     }
 }
 
-function check_bingo(){
+function check_bingo(){ // 가로 = 행
     for (var i = 0; i < 5; i++) {
         var rowSum = 0;
         for (var j = 0; j < 5; j++) {
@@ -57,7 +57,7 @@ function check_bingo(){
         }
     }
 
-    // Check columns
+    // 세로 = 열
     for (var i = 0; i < 5; i++) {
         var colSum = 0;
         for (var j = 0; j < 5; j++) {
@@ -68,7 +68,7 @@ function check_bingo(){
         }
     }
 
-    // Check diagonals
+    // Check diagonals(대각선)
     var diagonalSum1 = 0;
     var diagonalSum2 = 0;
     for (var i = 0; i < 5; i++) {
@@ -81,5 +81,4 @@ function check_bingo(){
 
     return false; // No bingo
 
-    // 0 몇개 있는지 어디에 0이 연속으로 있는지 연속으로 몇개인가 확인하기 위한 함수
 }

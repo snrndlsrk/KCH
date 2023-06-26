@@ -100,9 +100,46 @@ a{
 }
 
 
+#input_box{
+    margin: 50px auto;
+    width: 320px;
+}
+.mynum{
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    margin-right: 2px;
+}
+.mynum::-webkit-outer-spin-button,
+.mynum::-webkit-inner-spin-button{
+    -webkit-appearance: none; margin: 0;
+}
+#bt{
+    position: relative;
+    width: 320px;
+    margin: 0 auto;
+    text-align: right;
+    top: -20px;
+}
+#bt button{
+    border: 0;
+    background: #227adf;
+    font-size: 25px;
+    padding: 5px 25px;
+    color: #eee;
+}
 
 
 
+
+
+/*
+    -webkit : 구글 사파리 브라우저에 적용
+    -moz : 파이어폭스에 적용
+    -ms : 잇지, 익스플로러
+    -o : 오페라 적용
+*/
 
 
 
