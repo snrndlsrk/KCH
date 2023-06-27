@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0 auto;
+    width: 640px;
+}
+#wrap{
+    margin: 0 auto;
+    display: flex;
+    padding: 0;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    
+}
+#wrap div{
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+}
+
