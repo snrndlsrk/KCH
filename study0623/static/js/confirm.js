@@ -1,5 +1,26 @@
 
-window.onload=function(){
+
+    window.onload = function() {
+    //여기에 input에 키보드로 입력이벤트를 등록 시키기
+    // 키보드 이벤트는 press가 일반적이기는 한데
+    // 모든 input에 이벤트 등록해야함
+    var num_645 = document.getElementsByClassName("num_645");
+    for(var i=0; i<num_645.length; i++){
+        num_645[i].addEventListener("keyup",function(e){
+
+            if(e.keyCode < 48 || (e.keyCode > 57 && e.keyCode<96) || e.keyCode>105){
+                return;
+            } // 숫자키와 키패드 숫자 제외한 모든 키를 무시하기 위한 if문
+            var n = parseInt(this.value);
+            if( !(1<=n && n<=45)){
+                alert("1~45숫자만 입력하세요");
+                this.value='';
+                this.focus();
+            }
+        });
+    }
+    //if(isNaN(this.value)) -> value의 값이 숫자가 아니면 true.
+
     var drwNo = document.querySelector("#drwNo");
     var btnDefault = document.querySelector("#btnDefault");
     var btnSearch = document.querySelector("#btnSearch");
@@ -56,21 +77,59 @@ function data_search(){
 
         var input = document.getElementsByClassName("input"+line);
         var num_arr = new Array();
+        var bonus_str="<span>"+lotto[sel_count][8]+"</span>";; // 보너스에 관한 내용 변수
+        var isBonus = false; // 보너스번호가 있냐?
+        var win_cnt = 0; // 일치여부 갯수 저장 변수
+        var rank=0; // 등수
         
-        for(var i=0; i<input.length; i++){
-            if(input[i].value!=''){
-                var val = input[i].value;
-                if(win_num.indexOf(parseInt(val)) == -1) {// 내가 입력한  번호는 당첨 x
-                num_arr.push("<span>"+input[i].value+"</span>");
-            }else{ // 내가 입력한 번호가 당첨번호 o
-                num_arr.push("<strong class='red'>"+val+"</strong>");
-            }
+        
+    for(var i=0; i<input.length; i++){
+        if(input[i].value!=''){
+            var val = input[i].value;
+            if(win_num.indexOf(parseInt(val)) == -1) {// 내가 입력한  번호는 당첨 x
+            num_arr.push("<span>"+input[i].value+"</span>");
+        }else{ // 내가 입력한 번호가 당첨번호 o
+            num_arr.push("<strong class='red'>"+val+"</strong>");
+            win_cnt++;
+            // 여기에서 당첨 번호 몇개인지 구하기
         }
+            // 여기에 보너스 번호 일치여부에 관한 코드 작성
+            // (lotto[sel_count][8])
+        if( val == parseInt(lotto[sel_count][8])){
+            // if문이 첨이라면 내가 입력한 숫자가 보너스번호와 일치한다.
+            isBonus=true;
+        }
+        }
+    }
+    switch(win_cnt){
+        case 6 : rank=1; break; // 당첨번호 일치가 6개 1등
+        case 5 : if(isBonus) rank=2; // 당첨번호 일치 5개에 보너스 2등
+                 else rank=3; break; // 딩첨번호 일치가 5개만 3등
+        case 4 : rank=4; break; // 당첨번호 일치가 4개 3등
+        case 3 : rank=5; break; // 당첨번호 일치가 3개 5등
+        default:
+            rank="X"; // 당첨번호가 2개 이하면 X
+    }
+    if(isBonus){
+        bonus_str = "<strong class='red'>"+lotto[sel_count][8]+"</strong>";
+        win_cnt = win_cnt!=6 ? win_cnt+"+Bonus" : win_cnt;
+    }
         if( num_arr.length==6){
             var resN = document.getElementsByClassName("resultNumber");
             resN[line-1].innerHTML=num_arr;
             // 결과확인 버튼을 클릭하면 input 태그에 입력한 숫자를 모두 선택번호 td에 띄우기 출력하기
-        }
+
+            // 여기에 보너스 번호 출력코드 작성
+            // resultBonus
+            var bonus = document.getElementsByClassName("resultBonus");
+            bonus[line-1].innerHTML=bonus_str;
+            // 여기에 일치 갯수 출력코드 작성 resultNumberSu
+            var NumberSu = document.getElementsByClassName("resultNumberSu");
+            NumberSu[line-1].innerText=win_cnt;
+
+            var grade = document.getElementsByClassName("resultNumberGrade");
+            grade[line-1].innerHTML=rank;
         }
     }
 }
+

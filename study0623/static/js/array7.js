@@ -10,7 +10,7 @@
     클래스 삭제
     - element.classList.toggle('삭제할 클래스 이름');
     조건에 따라 클래스 삭제
-    - element.classList.toggle('삭제클리스이름',조건식);
+    - element.classList.toggle('삭제클래스이름',조건식);
     태그(element) 객체에 클래스가 있는지 확인방법
     - element.classList.contains('클래스이름');
     - 해당 클래스이름이 있다면 true 없다면 false
