@@ -51,6 +51,7 @@ function data_search(){
     for(var i=2; i<=7; i++){ // 내가 선택한 회차 당첨번호 win_num배열에 저장
         win_num.push(parseInt( lotto[sel_count][i] ) );
     }
+    alert(win_num);
     for(var line=1; line<=5; line++){
 
         var input = document.getElementsByClassName("input"+line);
@@ -59,14 +60,17 @@ function data_search(){
         for(var i=0; i<input.length; i++){
             if(input[i].value!=''){
                 var val = input[i].value;
+                if(win_num.indexOf(parseInt(val)) == -1) {// 내가 입력한  번호는 당첨 x
                 num_arr.push("<span>"+input[i].value+"</span>");
+            }else{ // 내가 입력한 번호가 당첨번호 o
+                num_arr.push("<strong class='red'>"+val+"</strong>");
             }
-                num_arr.push(input[i].value);
         }
         if( num_arr.length==6){
             var resN = document.getElementsByClassName("resultNumber");
             resN[line-1].innerHTML=num_arr;
             // 결과확인 버튼을 클릭하면 input 태그에 입력한 숫자를 모두 선택번호 td에 띄우기 출력하기
+        }
         }
     }
 }
