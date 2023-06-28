@@ -1,0 +1,28 @@
+#container{
+    display: grid;
+    grid-template-columns: repeat(5, minmax(150px, auto));
+    grid-template-rows: repeat(3, minmax(200px, auto));
+}
+.item{
+    border: 1px solid black;
+} 
+
+
+/* flex를 사용하게 되면 밑에 코드처럼 작성해야함.
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 750px;
+}
+.item{
+    width: 20%;
+    min-width: 150px;
+    height: 100%;
+    min-height: 200px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+grid는 큰 틀을 잡을때 사용하고 grid안에 flex를 사용하는 경우가 많다.
+*/
