@@ -1,0 +1,63 @@
+:root{
+    --bs-green:#27a776;
+    --bs-gray:rgb(199, 193, 193);
+}
+/* 변수 이름은 bs-green이고 앞에 --를 붙여줘야함 
+    bs와 green 사이에 - 은 빼도 상관없음 */
+
+*{
+    /*font-size: var(--title-size);*/
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    background: #000;
+}
+
+#wrap{
+    margin: 0 auto;
+    width: 1680px;
+    display: grid;
+    justify-content: center;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 450px 1280px 100px;
+}
+ul{ list-style-type: none;}
+#nav{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 15px;
+    align-items: center;
+}
+.webtitle{
+    font-size: 30px;
+}
+.webtitle i{ color: var(--bs-green); }
+
+.menu ul{ 
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.sns{
+    justify-self: end;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 15px;
+}
+.sns i::before{color: var(--bs-gray);}
+
+/* 수직은 align
+   수평은 justify */
+
+#main_text{
+    margin-top: 50px;
+    display: grid;
+    justify-content: center;
+    height: 250px;
+    grid-template-rows: auto;
+}
+#main_text h2{
+    font-size: 40px;
+    display: grid;
+    justify-content: center;
+}
