@@ -1,3 +1,5 @@
+
+
 :root{
     --bs-green:#27a776;
     --bs-gray:rgb(199, 193, 193);
@@ -20,7 +22,7 @@
     justify-content: center;
     gap: 20px;
     grid-template-columns: 1fr;
-    grid-template-rows: 450px 2600px 100px;
+    grid-template-rows: 70px 380px 2600px 100px;
 }
 ul{ list-style-type: none;}
 #nav{
@@ -28,7 +30,7 @@ ul{ list-style-type: none;}
     grid-template-columns: repeat(3, 1fr);
     padding: 15px;
     align-items: center;
-    position: sticky;
+    position: sticky; 
     top:0;
     z-index: 10;
 }
@@ -69,7 +71,7 @@ ul{ list-style-type: none;}
     justify-self: center;
     background: var(--bs-green);
     align-self: center;
-    padding: 10 30px;
+    padding: 10px 30px;
     border-radius: 5px;
 }
 #section{
@@ -171,3 +173,4 @@ ul{ list-style-type: none;}
     background-size: cover;
     background-repeat: no-repeat;
 }
+
