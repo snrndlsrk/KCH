@@ -45,18 +45,18 @@ h1{
     grid-template-columns: 5fr 3fr;
     align-items: center;
 }
-#category ul{
+#menu ul{
     display: grid;
     grid-template-columns: repeat(5,1fr);
     list-style-type: none;
 }
-#category ul li{
+#menu ul li{
     width:100px;
     height: 38px;
     text-align: center;
 }
 
-#category ul li:nth-child(1){
+#menu ul li:nth-child(1){
     text-decoration: underline;
     text-underline-offset: 5px;
 }
