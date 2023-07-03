@@ -6,31 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./static/css/test.css">
-    <style>
-        #wrap{
-            display: flex;
-            flex-direction: column;
+   <script>
+    var a=[]
+    window.onload=function(){
+        res = document.getElementById("res");
+        for(var i=1; i<15; i++){
+            res.append(i + " ");
         }
-        #box1,#box2,#box3{
-            border: 1px solid black;
-            width: 500px;
-            height: 100px;
-        }
-        #box1{
-            order: 2;
-        }
-        #box2{
-            order: 3;
-        }
-        #box3{
-            order: 1;
-        }
-    </style>
+    }
+   </script>
 </head>
 <body>
-    <div id="wrap"></div>
-        <div id="box1">1 </div>
-        <div id="box2">2</div>
-        <div id="box3">3</div>
+   <div id="res"></div>
 </body>
 </html>
+<style>
+    div{border: 1px solid red;}
+</style>

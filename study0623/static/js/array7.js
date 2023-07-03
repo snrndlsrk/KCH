@@ -70,7 +70,7 @@ window.onload=function(){
 
             for( var i in temp){ // 몇번을 반복하는지 이미 배열에 저장되어있으니 배열에서 사용가능이다.
                 // i 는 0-1072번까지 index가 들어가짐.
-            // for( var i=0; i<temp,length; i++){
+            // for( var i=0; i<temp.length; i++){
                 lotto.push( temp[i].split("\t")); // t는 tap이고 
             }
             alert(lotto[0][3]);
