@@ -51,24 +51,41 @@ window.onload=function(){ /* 처음 화면이 로딩 되었을때 필요한 것�
     right.addEventListener("click",선택);
 
 }
+function final(id, nid){
+    var n = 태그선택(nid);
+    n.style.display="none";
+    var 최종 = 태그선택(id);
+    최종.style.width="100%";
+    최종.style.height="100vw";
+}
+
+
+
 function 선택(){
-    if( this == 태그선택("left")){
+
+    if( this == 태그선택("left") ){
         토너먼트2.push(토너먼트1[순서[count*2-2]]);
-    }
-    else{
+        
+    }else{
         토너먼트2.push(토너먼트1[순서[count*2-1]]);
     }
-    if(count==round/2){
-        round=round/2;
-        count=0;
-        순서=new Array();
-        순서섞기();
-        토너먼트1 = 토너먼트2.map((i)=>i);
-        토너먼트2 = new Array();
+    if(round==2){ 
+        final("left","right");
+        var title =태그선택("title");
+        title.innerHTML="최종선택  ";
+    }else{
+        if(count==round/2){
+            round= round/2;
+            count=0;
+            순서=new Array();
+            순서섞기();
+            토너먼트1 = 토너먼트2.map((i)=>i);
+            토너먼트2=new Array();
+        }
+        count++;
+        var title =태그선택("title");
+        title.innerHTML=round+"강  "+count+"/"+(round/2);
     }
-    count++;
-    var title = 태그선택("title");
-    title.innerHTML=round+"강 "+count+"/"+(round/2);
     show();
 }
 

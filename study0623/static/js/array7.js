@@ -41,7 +41,7 @@ let lotto = new Array(); // 역대 당첨 번호 저장될 배열
 
 window.onresize=function(){
     var wd = window.innerWidth;
-    if( wd > 786){
+    if( wd > 786 ){
         var list = document.getElementsByClassName("menu_list")[0];
         list.style.display="none";
         list.dataset.show='1';
