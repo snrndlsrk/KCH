@@ -13,8 +13,8 @@
         }
         #wrap{
             display: flex;
-            width: 1000px;
-            height: 600px;
+            width: 1200px;
+            height: 800px;
             border: 1px solid black;
             
         }
@@ -22,24 +22,9 @@
             width:20px;
             height: 20px;
             border : 1px solid black; 
-            margin: 10px;
-        }
-        #sub1{
-            display: flex;
-        }
-        #sub2{
-            display: flex;
-        }
-        #sub3{
-            display: flex;
-        }
-        #sub4{
-            display: flex;
+            margin: 0 auto;
         }
 
-        
-
-        
     </style>
 </head>
 <body>
@@ -57,54 +42,58 @@
         역을 클릭하면 가장 가까운 지하철이 몇 정거장 전에 있는지 표시합니다.
     -->
     <div id="wrap">
-        <div id="sub1">
-            <div class="subway" id="subway1"></div>
-            <div class="subway" id="subway2"></div>
-            <div class="subway" id="subway3"></div>
-            <div class="subway" id="subway4"></div>
-            <div class="subway" id="subway5"></div>
-            <div class="subway" id="subway6"></div>
-            <div class="subway" id="subway7"></div>
-            <div class="subway" id="subway8"></div>
-            <div class="subway" id="subway9"></div>
-            <div class="subway" id="subway10"></div>
-        </div>
-        <div id="sub2">
-            <div class="subway" id="subway11"></div>
-            <div class="subway" id="subway12"></div>
-            <div class="subway" id="subway13"></div>
-            <div class="subway" id="subway14"></div>
-            <div class="subway" id="subway15"></div>
-            <div class="subway" id="subway16"></div>
-            <div class="subway" id="subway17"></div>
-            <div class="subway" id="subway18"></div>
-            <div class="subway" id="subway19"></div>
-            <div class="subway" id="subway20"></div>
-        </div>
-        <div id="sub3">
-            <div class="subway" id="subway21"></div>
-            <div class="subway" id="subway22"></div>
-            <div class="subway" id="subway23"></div>
-            <div class="subway" id="subway24"></div>
-            <div class="subway" id="subway25"></div>
-            <div class="subway" id="subway26"></div>
-            <div class="subway" id="subway27"></div>
-            <div class="subway" id="subway28"></div>
-            <div class="subway" id="subway29"></div>
-            <div class="subway" id="subway30"></div>
-        </div>
-        <div id="sub4">
-            <div class="subway" id="subway31"></div>
-            <div class="subway" id="subway32"></div>
-            <div class="subway" id="subway33"></div>
-            <div class="subway" id="subway34"></div>
-            <div class="subway" id="subway35"></div>
-            <div class="subway" id="subway36"></div>
-            <div class="subway" id="subway37"></div>
-            <div class="subway" id="subway38"></div>
-            <div class="subway" id="subway39"></div>
-            <div class="subway" id="subway40"></div>
-        </div>
+            <div class="subway" id="sub1"></div>
+            <div class="subway" id="sub2"></div>
+            <div class="subway" id="sub3"></div>
+            <div class="subway" id="sub4"></div>
+            <div class="subway" id="sub5"></div>
+            <div class="subway" id="sub6"></div>
+            <div class="subway" id="sub7"></div>
+            <div class="subway" id="sub8"></div>
+            <div class="subway" id="sub9"></div>
+            <div class="subway" id="sub10"></div>
+            <div class="subway" id="sub11"></div>
+            <div class="subway" id="sub12"></div>
+            <div class="subway" id="sub13"></div>
+            <div class="subway" id="sub14"></div>
+            <div class="subway" id="sub15"></div>
+            <div class="subway" id="sub16"></div>
+            <div class="subway" id="sub17"></div>
+            <div class="subway" id="sub18"></div>
+            <div class="subway" id="sub19"></div>
+            <div class="subway" id="sub20"></div>
+            <div class="subway" id="sub21"></div>
+            <div class="subway" id="sub22"></div>
+            <div class="subway" id="sub23"></div>
+            <div class="subway" id="sub24"></div>
+            <div class="subway" id="sub25"></div>
+            <div class="subway" id="sub26"></div>
+            <div class="subway" id="sub27"></div>
+            <div class="subway" id="sub28"></div>
+            <div class="subway" id="sub29"></div>
+            <div class="subway" id="sub30"></div>
+            <div class="subway" id="sub31"></div>
+            <div class="subway" id="sub32"></div>
+            <div class="subway" id="sub33"></div>
+            <div class="subway" id="sub34"></div>
+            <div class="subway" id="sub35"></div>
+            <div class="subway" id="sub36"></div>
+            <div class="subway" id="sub37"></div>
+            <div class="subway" id="sub38"></div>
+            <div class="subway" id="sub39"></div>
+            <div class="subway" id="sub40"></div>
     </div>
+
+    <script>
+        let stations = 40; 
+        let trains = 4; 
+        let interval = 3000; 
+
+        var currentPositions = new Array(trains).fill(0);
+        var timers = []; 
+
+        
+        
+    </script>
 </body>
 </html>
