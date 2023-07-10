@@ -1,0 +1,58 @@
+<!-- table.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table tr td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="bt">
+        <button onclick="make()">테이블</button>
+        <button onclick="sel_color()">색상</button>
+    </div>
+    <div id="myTable">
+        
+    </div>
+</body>
+</html>
+<script>
+    let child="";
+    function make(){
+        child = window.open("./make.html","","width=500,height=400");
+    }
+    function sel_color() {
+        child = window.open("", "_blank", "width=500,height=400");
+        const colors = getRandomColors(8);
+        const colorList = document.createElement("ul");
+
+        colors.forEach((color) => {
+            const listItem = document.createElement("li");
+            listItem.style.backgroundColor = color;
+            listItem.textContent = color;
+            colorList.appendChild(listItem);
+        });
+
+        child.document.body.appendChild(colorList);
+    }
+
+    function getRandomColors(count) {
+        const randomColors = [];
+        const characters = "0123456789ABCDEF";
+
+        for (let i = 0; i < count; i++) {
+            let color = "#";
+            for (let j = 0; j < 6; j++) {
+                color += characters[Math.floor(Math.random() * 16)];
+            }
+            randomColors.push(color);
+        }
+
+        return randomColors;
+    }
+</script>
