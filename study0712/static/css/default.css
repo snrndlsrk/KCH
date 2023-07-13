@@ -63,7 +63,6 @@ a:visited{
     position:absolute;
     top:0;
     width:100%;
-    overflow: hidden;
 }
 
 
@@ -198,10 +197,67 @@ a:visited{
 
 
 #nav{
-
+    /*
+        -webkit-gradient(linear, left top, left bottom, color stop
+        20%, rgba(0,0,0,0.6), to (rgba(0,0,0,0) ));
+        브라우저 사파리나 크롬에서는 webkit를 사용해준다.
+    */
+    background: -webkit-linear-gradient(linear, left top, left bottom, color stop
+    20%, rgba(0,0,0,0.6), to (rgba(0,0,0,0) ));
+    
+    height: 80px;
+}
+.main_menu{
+    display: flex;
+    color: #fff;
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 800;
+}
+.main_menu .toplink a{
+    color: #fff;
+}
+.main_menu:hover{
+    background: #fff;
+    color: #999;
+}
+.main_menu:hover .toplink a{
+    color: #999;
+}
+.main_menu .toplink{
+    position: relative;
+    padding: 30px;
+}
+.main_menu .toplink .sub-block{
+    display: none;
+}
+.main_menu .toplink:hover .sub-block{
+    display: flex;
 }
 
-
+.sub-block{
+    position: absolute;
+    display: flex;
+    top: 80px;
+    width: 1000px;
+    background: #fff;
+    justify-content: space-between;
+}
+.sub-block .sub-item{
+    padding: 10px;
+    width: 230px;
+}
+.main_menu .toplink .sub-block a{
+    color: rgba(0,0,0,0.7);
+    display: block;
+}
+.main_menu .toplink .sub-block .sub-item h3{
+    color: #690;
+}
 #banner{
 
 }
