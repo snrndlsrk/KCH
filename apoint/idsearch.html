@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디 찾기</title>
+<style>
+  * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#wrap {
+  width: 1920px; /* Change the width to 100% to make it responsive */
+ 
+}
+
+#header {
+  width: 1920px; /* Change the width to 100% to make it responsive */
+  height: 150px;
+  background: black;
+  display: flex;
+  justify-content: left; /* Center align the logo */
+}
+
+.find h1 {
+  text-align: center;
+  padding: 50px;
+}
+
+.radio1 {
+  width: 600px;
+  text-align: center;
+  padding-left: 75px;
+  margin: 0 auto; /* Center align the radio buttons */
+}
+
+.radio2 {
+  width: 600px;
+  text-align: left;
+  margin: 0 auto; /* Center align the radio buttons */
+  margin-right:500px;
+}
+
+#input_p {
+  width: 150px;
+  height: 30px;
+  margin: 0 auto;
+}
+
+.input_p {
+  width: 250px;
+  margin: 0 auto;
+}
+
+.input {
+  width: 250px;
+  margin: 0 auto;
+}
+
+#logo img {
+  width: 200px;
+  height: 150px;
+  display: flex;
+  align-items: left;
+}
+
+</style>
+
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+        
+            <div id="logo">
+                <a href="index.html">
+                    <img src="./image/logo.png">
+                </a>
+            </div>
+        </header>
+                    
+            
+       
+
+
+
+        
+    <div class="find">
+        <h1>아이디 찾기</h1>
+
+    <div class="radio1">
+    <input class="radio" type="radio">회원정보에 등록한 휴대전화번호로 인증하기</input>    
+    </div>
+    
+    <div class="input">
+
+    <div class="input_p">
+        <input type="text" id="input_p" placeholder="이름">
+    </div>
+    
+    <div class="input_p">    
+        <input type="text" id="input_p" placeholder="휴대폰번호">
+        <button id="input_ps">인증번호요청하기</button>
+    </div>
+
+    <div class="input_p">    
+        <input type="text" id="input_p" placeholder="인증번호 6자리">
+        <button id="input_ps">인증하기</button>
+    </div>
+
+
+    <div class="radio2">
+        <input class="radio" type="radio">본인 이메일로 인증하기</input>
+        </div>
+        
+        <div class="input">
+    
+        <div class="input_p">
+            <input type="text" id="input_p" placeholder="이름">
+        </div>
+        
+        <div class="input_p">    
+            <input type="text" id="input_p" placeholder="이메일주소">
+            <button id="input_ps">인증번호요청하기</button>
+        </div>
+    
+        <div class="input_p">    
+            <input type="text" id="input_p" placeholder="인증번호">
+            <button id="input_ps">인증하기</button>
+        </div>
+
+    </div>
+    
+
+    </div>
+    
+
+
+
+</body>
+</html>

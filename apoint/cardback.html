@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계좌해지</title>
+    <script>
+
+function cardback() {
+  var accountNumber = document.querySelector('#account-number').innerText;
+  alert(accountNumber+"\t"+"해지 신청이 완료되었습니다\n" +"영업일 1일 이내 은행사에서 처리 됩니다. " );
+}
+    </script>
+    
+    
+    <style>
+        *{padding:0; margin:0; box-sizing: border-box;}
+        #wrap
+        {
+            width:1920px; 
+            min-width:900px;
+        }
+        #header{
+            width:1920px;
+            height:150px;
+            background:black;
+            display: flex;
+        }
+        #logo img{
+            width: 200px;
+            height: 150px;
+        }
+
+
+        .cardback{
+            width:1000px;
+            height: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            padding:200px;
+        }
+
+        .cardback h1{
+            width:500px;
+            padding:50px;
+        }
+
+        .cardback img{
+            width:50px;
+            align-items: center;
+        }
+
+        .backbox{
+            width:500px;
+            
+        }
+
+        .backbox button{
+            width:100px;
+            height: 50px;
+            font-size: 20px;
+            margin:20px;
+        }
+
+        .cbp{
+            
+            border: 1px solid black;
+            text-align: left;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            
+            <div id="logo">
+                <a href="index.html">
+                    <img src="./image/logo.png">
+                </a>
+            </div>    
+        </header> 
+
+        <div class="cardback">
+            
+            <div class="backbox">
+            <h1>계좌해지</h1>
+            <img src="./image/cardback.png">
+            <h2 id="account-number">계좌번호 : 148-9965-51123 </h2>
+            <p>자세한 내용은 은행사에게 문의해주세요</p>
+            <p>은행사 : 1234-5678</p>
+                
+            <button onclick="cardback()">해지신청</button>   
+            
+            <p class="cbp">
+                알아두세요.<br>
+                포인트의 유효기간은 사용가능 포인트 전환일로부터 2년이며, 포인트의 성격에 따라 유효기간이 다를 수 있습니다.<br>
+                적립금 1포인트는 현금 1원과 동일하게 사용할 수 있습니다.<br>
+                포인트 적립 및 사용 가능 가맹점은 가맹점 에서 확인해주세요.<br>
+                포인트 충전 및 취소/환급 유의사항<br>
+           </p>
+        </div>
+
+
+        </div>
+       
+
+
+
+</body>
+</html>
+

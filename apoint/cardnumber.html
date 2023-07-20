@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계좌추가하기</title>
+    <script>
+       function check() {
+        alert("결제 수단이 등록 되었습니다.");
+        var result = confirm("홈페이지로 이동 하시겠습니까?"); // 경고 메시지를 포함한 확인 대화 상자를 표시하고, 사용자의 선택 결과를 변수에 저장합니다.
+
+        if (result) {
+        alert("예를 선택했습니다."); // 사용자가 "예"를 선택한 경우, 예를 선택했다는 메시지를 표시합니다.
+        window.location.href = "index.html";
+        } else {
+        alert("아니오를 선택했습니다."); // 사용자가 "아니오"를 선택한 경우, 아니오를 선택했다는 메시지를 표시합니다.
+        
+        }
+        }
+    </script>
+    <style>
+
+*{
+            padding:0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        
+        #wrap{
+            width:1920px;
+            min-width:900px;
+            
+        }
+        
+        #header{
+            
+            width: 1920px;
+            height: 150px;
+            background: black;
+            display: flex;
+           
+        }
+        #bt{
+            width:50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            
+        }
+        #bt button{
+            background:blue;
+            color:white;
+            width:100px;
+            height: 50px;
+            font-size: 25px;
+           
+        }
+        .cardradio{
+            display: flex;
+            justify-content: center;
+            gap:100px;
+        }
+        .checklist{
+          display: flex;
+          justify-content: center;
+        }
+        .cardcheck{
+            display: flex;
+            align-items: left;
+            flex-direction: column;
+            gap: 40.5px;
+            padding: 30px;
+            text-align: center;
+            margin-top:50px;
+        }
+        
+        #bt{
+            margin: 0 auto;
+            width: 100px;
+        }
+        h1{
+            text-align: center;
+            padding: 20px;
+        }
+        .list{
+          margin-top:50px;
+          display: flex;
+          align-items: center;
+          gap: 30px;
+          padding: 28px;
+          flex-direction: column;
+        }
+         #logo img{
+            width: 200px;
+            height: 150px;
+        }
+
+</style>        
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+        
+            <div id="logo">
+                <a href="index.html">
+                    <img src="./image/logo.png">
+                </a>
+            </div>
+        </header>
+        
+
+        <h1>결제수단 등록</h1>
+        <div class="cardnumberadd">
+            <div class="cardradio">
+              <label><input type="radio"></input>신용/체크카드</label>   
+              <label><input type="radio"></input>계좌</label>   
+              <label><input type="radio"></input>휴대폰</label>  
+            </div>
+            <div class="checklist">
+              <div class="cardcheck">
+                  <input type="checkbox"></input>
+                  <input type="checkbox"></input>
+                  <input type="checkbox"></input>
+                  <input type="checkbox"></input>
+              </div>
+              <div class="list">
+                <label>전자 금융 거래 이용약관 동의 (필수)</label>
+                <label>개인정보 수집 및 이용동의 (필수)</label>
+                <label>개인정보 제공 및 위탁동의 (필수)</label>
+                <label>개인정보처리방침(필수)</label>
+              </div>
+            </div>
+            <div id="bt">
+                  <button>확인</button>   
+            </div>
+        </div>
+
+
+</body>
+</html>

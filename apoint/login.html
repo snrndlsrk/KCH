@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <style>
+        *{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    }
+
+
+    #wrap{
+        width:1920px;
+        min-width:900px;
+        
+    }
+
+    #header{
+        
+        width: 1920px;
+        height: 150px;
+        background: black;
+        display: flex;
+    
+    }
+   
+    .input {
+        text-align: center;
+        height: 900px;
+        padding:100px;
+       
+    }
+    .input_box{
+        width: 250px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+    .input_box label {
+        width: 100px; /* Adjust the width to your desired size */
+        font-size: 16px;
+    
+    }
+  
+  
+    #login_bt{
+        width:250px;
+        height: 50px;
+        font-size: 30px;
+        background:#082A83;
+        color:white;
+        
+        margin-top: 20px;
+       
+        
+    }
+
+
+    #loginauto{
+        margin-top:20px;
+    }
+
+    #id,#pw{
+        width:250px;
+        height: 50px;
+    }
+
+       #logo img{
+    width: 200px;
+    height: 150px;
+}
+   </style>
+</head>
+
+<body>
+
+   <div id="wrap">
+    <header id="header">
+        
+        <div id="logo">
+            <a href="index.html">
+                <img src="./image/logo.png">
+            </a>
+        </div>
+
+        
+             
+        
+    </header> 
+
+
+
+
+
+        <div class="input">
+             <h1>로그인</h1>
+        <div class="input_box">
+            
+            <input type="text" name="id" id="id" placeholder="아이디">       
+        </div>
+        <div class="input_box">
+            
+            <input type="password" name="pw" id="pw" placeholder="비밀번호">
+        </div> 
+        
+            <button id="login_bt">로그인</button>
+            <br>
+            <input id="loginauto" type="checkbox">자동로그인
+
+     </div>
+
+</div>
+</body>
+</html>
+
+<script>
+    window.addEventListener('DOMContentLoaded', function() {
+        var loginButton = document.getElementById('login_bt');
+        loginButton.addEventListener('click', function() {
+            var idInput = document.getElementById('id');
+            var pwInput = document.getElementById('pw');
+            
+            if (idInput.value === '') {
+                alert('아이디를 입력해주세요!');
+            }else if( pwInput.value === '')
+                alert('비밀번호를 입력하세요');
+        });
+    });
+</script>

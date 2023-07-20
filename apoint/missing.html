@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>분실신고</title>
+    <style>
+        *{
+            padding:0; 
+            margin:0; 
+            box-sizing: border-box;
+        }
+        #wrap{
+            width:1980px;
+            /* margin:100px auto; */
+        }
+        #header{
+            width: 1980px;
+            height: 150px;
+            background: black;
+            display: flex;
+        }
+        .title{
+            width:100px;
+            border-right:1px solid black;
+            padding-right:10px;
+            text-align: right;
+            display:flex;
+            flex-direction: column;
+            row-gap:5px;
+        }.title label{height:22px;}
+        .input_box{
+            width:200px;
+            padding-left:10px;
+            row-gap:5px;
+            display:flex;
+            flex-direction: column;
+        }
+        .input_box input{height:22px;}
+        .missing{
+            display:flex;
+        }
+        #button{
+            display:flex;
+            width: 100%;
+            justify-content: center;
+            padding: 20px;
+            
+        }
+        #ms_bt{
+            width: 188px;
+            height: 86px;
+            margin-right: 45px;
+            font-size: 20px;
+            color: #fff;
+            opacity: 0.9;
+            background: black;
+        }
+        #cancel{
+            width: 180px;
+            height: 86px;
+            margin-right: 45px;
+            font-size: 20px;
+            color: #fff;
+            opacity: 0.9;
+            background: #082A83;            
+        }
+        h1{
+            text-align: center;
+            padding: 30px ;
+            
+        }
+        .missing{
+            display:flex;
+            width: 100%;
+            justify-content: center;
+        }
+
+        #logo img{
+        width: 200px;
+        height: 150px;
+    }
+    </style>
+</head>
+<body>
+   
+    <div id="wrap">
+
+        <header id="header">
+        
+            <div id="logo">
+                <a href="index.html">
+                    <img src="./image/logo.png">
+                </a>
+            </div>
+        </header>
+           
+                  
+            
+            
+        
+
+
+
+        <h1>분실신고</h1>
+            <div class="missing">
+                <div class="title">
+                    <label>이름</label>
+                    <label>카드번호</label>
+                    <label>통신사</label>
+                </div>
+                <div class="input_box">
+                    <input type="text" name="id" id="id">
+                    <input type="cardnumber" name="cn" id="cn">
+                    <input type="text" name="tel" id="tel">
+                </div>
+        </div>
+        <div id="button">
+            <button id="cancel">취소</button>
+            <button id="ms_bt">분실신고</button>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
