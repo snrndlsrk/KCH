@@ -14,7 +14,7 @@ function cardback() {
     
     
     <style>
-        *{padding:0; margin:0; box-sizing: border-box;}
+        *{padding:0; margin:0; box-sizing: border-box;}/*box-sizing:요소의 너비와 높이를 균일하게 유지해주는 편리한 속성*/
         #wrap
         {
             width:1920px; 
@@ -24,7 +24,7 @@ function cardback() {
             width:1920px;
             height:150px;
             background:black;
-            display: flex;
+            display: flex;/*레이아웃배치, 가로방향으로 배치되고, 자신이 가진 너비만큼만 지정된다.*/
         }
         #logo img{
             width: 200px;
@@ -62,7 +62,7 @@ function cardback() {
             margin:20px;
         }
 
-        .cbp{
+        .cbp{/*안내문부분*/
             
             border: 1px solid black;
             text-align: left;
@@ -74,7 +74,7 @@ function cardback() {
 <body>
     <div id="wrap">
         <header id="header">
-            
+            <!--로고이미지 클릭시 메인화면으로 이동-->
             <div id="logo">
                 <a href="index.html">
                     <img src="./image/logo.png">
@@ -83,7 +83,7 @@ function cardback() {
         </header> 
 
         <div class="cardback">
-            
+            <!--계좌해지 내용부분-->
             <div class="backbox">
             <h1>계좌해지</h1>
             <img src="./image/cardback.png">
@@ -92,7 +92,7 @@ function cardback() {
             <p>은행사 : 1234-5678</p>
                 
             <button onclick="cardback()">해지신청</button>   
-            
+            <!--안내문-->
             <p class="cbp">
                 알아두세요.<br>
                 포인트의 유효기간은 사용가능 포인트 전환일로부터 2년이며, 포인트의 성격에 따라 유효기간이 다를 수 있습니다.<br>
@@ -110,4 +110,3 @@ function cardback() {
 
 </body>
 </html>
-

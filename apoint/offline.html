@@ -1,118 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>오프라인 가맹점</title>
-    <style>
-
-        *{
-            padding:0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        
-        
-        #wrap{
-            width:1920px;
-            min-width:900px;
-            
-        }
-        
-        #header{
-            width: 1920px;
-            height: 150px;
-            background: black;
-            display: flex;
-           
-        }
-        
-        
-        
-        #offline_store{
-            width:1600px;
-            height: 2000px;
-            margin:0 auto;
-            padding:150px;
-        }
-        
-        .location{
-          width:800px;
-          margin: 0 auto;
-          
-        }
-
-        .location img{
-            width:800px;
-        }
-       
-        h1{
-            width:800px;
-            text-align: center;
-            padding:30px;
-            word-spacing:1em;
-        }
-        h2{
-            width: 700px;
-            text-align: center;
-            padding: 20px;
-        }
-        #logo img{
-    width: 200px;
-    height: 150px;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오프라인 가맹점</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<script>
+window.onload=function(){
+var button = document.getElementById('lo_bt');
+button.addEventListener('click', changeCenter);
 }
-       
-        </style>
+function changeCenter(){ /*버튼 누르면 현위치로 이동할수있는*/
+var here = { lat: 36.328725, lng: 127.422993 };/*(위도,경도 순)*/
+map = new google.maps.Map(
+document.getElementById('map'), {
+zoom: 20,
+center: here
+});
+new google.maps.Marker({ /*위치표시*/
+position: here,
+map: map,
+label: "현위치" /*위치표시이름*/
+});
+for (var i = 0; i < locations.length; i++) {
+var marker = new google.maps.Marker({
+map: map,
+label: locations[i].place,
+position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
+});
+}
+}
+function initMap() {
+const map = new google.maps.Map(document.getElementById("map"), {
+zoom: 17,
+center: { lat: 36.328725, lng: 127.422993 },/*지도중심위치*/
+});
+
+for (var i = 0; i < locations.length; i++) {
+var marker = new google.maps.Marker({
+map: map,
+label: locations[i].place,
+position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
+});
+}
+}
+const locations = [
+{ place:"cu", lat: 36.328507, lng: 127.422820 },
+{ place:"아임일리터", lat: 36.328365, lng: 127.422950 },
+{ place:"세븐일레븐", lat: 36.328993, lng: 127.422560},
+{ place:"메가커피앤마카롱", lat: 36.327629, lng: 127.423023},
+{ place:"알라딘", lat: 36.328870, lng: 127.427100},
+{ place:"감성커피", lat: 36.328415, lng: 127.423167},
+{ place:"계룡문고", lat: 36.328060, lng: 127.423051}
+];
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYlfzsRxs5UlRUmrmZG5YwLjagFnV8Hss&callback=initMap"></script>
+<title>오프라인 가맹점</title>
+<style>
+
+*{
+padding:0;
+margin: 0;
+box-sizing: border-box;
+/* 모든 요소의 패딩, 마진, 상자 크기 설정 */
+}
+
+#wrap{
+width: 1920px;
+min-width: 900px;
+/* 화면 너비 1920px, 최소 너비 900px로 설정 */
+}
+
+#header{
+width: 1920px;
+height: 150px;
+background: black;
+display: flex;
+/* 헤더 스타일링 */
+}
+
+#offline_store{
+width: 1600px;
+height: 2000px;
+margin: 0 auto;
+padding: 150px;
+/* 오프라인 상점 스타일링 */
+}
+
+.location{
+width: 800px;
+margin: 0 auto;
+/* 위치 스타일링 */
+}
+
+h1{
+width: 800px;
+text-align: center;
+padding: 30px;
+word-spacing: 1em;
+/* 제목 스타일링 */
+}
+
+#logo img{
+width: 200px;
+height: 150px;
+/* 로고 이미지 스타일링 */
+}
+#map{
+width:1500px;
+height:800px;
+}
+table tr td{
+border-bottom: 1px dashed black;
+width:1980px;
+height: 150px;
+}
+#pt_list{
+width: 1500px;
+}
+#list{
+text-align: center;
+font-size: 25px;
+}
+#list td:nth-child(1){
+width:100px;
+}
+#list td:nth-child(3){
+color:red;
+font-weight: 900;
+}
+#list td:nth-child(4){
+color:#2e515f;
+font-weight: 900;
+}
+#list i{
+margin:10px;
+}
+#lo_bt{
+width: 200px;
+height:50px;
+margin:10px;
+font-size: 15px;
+background:#2e515f;
+color:white;
+}
+
+</style>
 </head>
-
 <body>
+<div id="wrap">
+<header id="header">
+<div id="logo">
+<a href="index.html">
+<img src="./image/logo.png">
+</a>
+</div>
+</header>
+<!-- offline_store 영역-->
+<div id="offline_store">
+<div class="location">
+<h1>
+오프라인 가맹점
+</h1>
+</div>
+<div id="map"></div>
+<button id="lo_bt">현재 위치로 이동하기</button>
+<div id="pt_list">
+<div id="list">
+<table>
+<tr>
+<td>1</td>
+<td>CU선화점</td>
+<td><i class="bi bi-telephone"></i>070-8648-0810</td>
+<td><i class="bi bi-geo"></i>대전광역시 중구 대종로505번길 44 (선화동)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>아임일리터</td>
+<td><i class="bi bi-telephone"></i>042-221-1131</td>
+<td><i class="bi bi-geo"></i>대전 중구 중앙로121번길 13</td>
+</tr>
+<tr>
+<td>3</td>
+<td>세븐일레븐</td>
+<td><i class="bi bi-telephone"></i>042-257-0711</td>
+<td><i class="bi bi-geo"></i>대전광역시 중구 대종로517번길 37</td>
+</tr>
+<tr>
+<td>4</td>
+<td>메가커피앤마카롱</td>
+<td><i class="bi bi-telephone"></i>0507-1301-4606</td>
+<td><i class="bi bi-geo"></i>대전 중구 중앙로 145 지하상가 c가 15호</td>
+</tr>
+<tr>
+<td>5</td>
+<td>알라딘 중고서점</td>
+<td><i class="bi bi-telephone"></i>1544-2514</td>
+<td><i class="bi bi-geo"></i>대전광역시 중구 중앙로 160 밀라노21 지하 1층</td>
+</tr>
+<tr>
+<td>6</td>
+<td>감성커피</td>
+<td><i class="bi bi-telephone"></i>0507-1476-3410</td>
+<td><i class="bi bi-geo"></i>대전 중구 중앙로121번길 16 1층</td>
+</tr>
+<tr>
+<td>7</td>
+<td>계룡문고</td>
+<td><i class="bi bi-telephone"></i>042-222-4600</td>
+<td><i class="bi bi-geo"></i>대전광역시 중구 중앙로 119 삼성생명빌딩 지하1층</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-    <div id="wrap">
-        <header id="header">
-        
-            <div id="logo">
-                <a href="index.html">
-                    <img src="./image/logo.png">
-                </a>
-            </div>
-        </header>
-        
-        <div id="offline_store">
-           
-
-            <div class="location">
-                
-           
-                <h1>
-                    오프라인 가맹점
-                </h1> 
-            
-            <img src="./image/location1.png">
-            
-            
-                <h2>1. CU선화점 700m</h2>
-                <h2>2. 세븐일레븐 대전선화행복점 1km</h2>
-                <h2>3. 메가커피앤마카롱 1.5km</h2>
-
-
-            </div>
-            
-           
-            
-                 
-            </div>
-
-            
-        </div>
-
-
-
-        
-    </div>
-
-
-
-
-    
 </body>
 </html>

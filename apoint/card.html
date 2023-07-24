@@ -5,41 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>카드신청하기</title>
     <style>
-        *{
+        *{ /*전체크기설정*/
             padding:0; 
             margin:0; 
-            box-sizing: border-box;
+            box-sizing: border-box;/*box-sizing:요소의 너비와 높이를 균일하게 유지해주는 편리한 속성*/
         }
         #wrap{
             width:1980px;
+            /*너비 : 1980px,너비를 1980으로 정한 이유는 데스크톱에서 고화질hd 비율에 맞게 설정*/
            
         }
         #header{
             width: 1980px;
             height: 150px;
             background: black;
-            display: flex;
+            display: flex;/*레이아웃배치, 가로방향으로 배치되고, 자신이 가진 너비만큼만 지정된다.*/
         }
-        .title{
+        .missing{/*이름~우편번호 부분*/
+            display:flex;
+        }
+        .title{/*이름~우편번호 아이템 부분*/
             width:110px;
             border-right:1px solid black;
             padding-right:10px;
             text-align: right;
             display:flex;
-            flex-direction: column;
-            row-gap:5px;
+            flex-direction: column;/*컨테이너 내부의 아이템을 열 방향으로 배치*/
+            row-gap:5px;/*컨테이너 내부의 아이템들의 간격 조정*/
         }.title label{height:22px;}
         .input_box{
             width:200px;
             padding-left:10px;
-            row-gap:5px;
+            row-gap:5px;/*컨테이너 내부의 아이템들의 간격 조정*/
             display:flex;
-            flex-direction: column;
+            flex-direction: column;/*컨테이너 내부의 아이템을 열 방향으로 배치*/
         }
         .input_box input{height:22px;}
-        .missing{
-            display:flex;
-        }
         #button{
             display:flex;
             width: 100%;
@@ -64,26 +65,32 @@
             opacity: 0.9;
             background: #082A83;            
         }
-        h1{
+        h1{ /*카드신청하기 텍스트 부분*/
             text-align: center;
         }
-        .missing{
+        .missing{/*이름~우편번호 부분 컨테이너 부분*/
             display:flex;
             width: 100%;
             justify-content: center;
         }
-        #logo img{
-    width: 200px;
-    height: 150px;
+        #logo img{/*a-point 로고 부분 이미지 크기 조정*/
+        width: 200px;
+        height: 150px;
         }
+        .cardplus{
+            width:800px;
+            height: 313px;
+            margin: 0 auto;
+            padding-top: 40px;
+        }
+     
     </style>
 </head>
 <body>
     <div id="wrap">
         <header id="header">
-        
             <div id="logo">
-                <a href="index.html">
+                <a href="index.html"><!--로고이미지 클릭시 메인화면으로 이동-->
                     <img src="./image/logo.png">
                 </a>
             </div>
@@ -97,7 +104,9 @@
                     <label>전화번호</label>
                     <label>주소</label>
                     <label>우편번호</label>
+                    <label>카드유형</label>
                 </div>
+                <!--이름~우편번호 입력칸-->
                 <div class="input_box">
                     <input type="text" name="id" id="id">
                     <input type="text" name="en_name" id="en_name">
@@ -105,12 +114,62 @@
                     <input type="text" name="tel" id="tel">
                     <input type="text" name="add" id="add">
                     <input type="text" name="post" id="post">
+                    <input type="text" name="cardplus" id="cardplus" placeholder="카드형:색깔,토큰형">
                 </div>
         </div>
+        <!--확인 취소 버튼-->
         <div id="button">
             <button id="ok">확인</button>
-            <button id="cancel">취소</button>
+            <a href="card.html"><button id="cancel">취소</button></a>
         </div>
     </div>
+    <div class="cardplus">
+        <img src="./image/cardplus.png">
+        </div>
 </body>
 </html>
+
+<script>
+   window.addEventListener('DOMContentLoaded', function() {
+            var okButton = document.getElementById('ok');
+            var cancelButton = document.getElementById('cancel');
+            var inputs = document.querySelectorAll('.input_box input');
+            
+            okButton.addEventListener('click', function() {
+                var nameInput = document.getElementById('id');
+                var enNameInput = document.getElementById('en_name');
+                var numInput = document.getElementById('num');
+                var telInput = document.getElementById('tel');
+                var addInput = document.getElementById('add');
+                var postInput = document.getElementById('post');
+                
+                if (nameInput.value === '' || enNameInput.value === '' || numInput.value === '' || telInput.value === '' || addInput.value === '' || postInput.value === '') {
+                    alert('필수 정보를 모두 입력해주세요!');
+                } else {
+                    var values = {
+                        이름: nameInput.value,
+                        영어이름: enNameInput.value,
+                        주민등록번호: numInput.value,
+                        전화번호: telInput.value,
+                        주소: addInput.value,
+                        우편번호: postInput.value
+                    };
+                    
+                    var message = '';
+                    for (var key in values) {
+                        message += key + ': ' + values[key] + '\n';
+                    }
+                    
+                    if (window.confirm(message + '메인 홈페이지로 이동하시겠습니까?')) {
+                        window.location.href = 'index.html'; // Redirect to index.html
+                    }
+                }
+            });
+            
+            cancelButton.addEventListener('click', function() {
+                inputs.forEach(function(input) {
+                    input.value = '';
+                });
+            });
+        });
+</script>

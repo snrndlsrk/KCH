@@ -5,98 +5,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>비밀번호 찾기</title>
     <style>
-        *{
-        padding:0;
-        margin: 0;
-        box-sizing: border-box;
-        }
-        #wrap{
-            width:1920px;
-            min-width:900px;
-            
-        }
-    
-        #header{
-            
-            width: 1920px;
-            height: 150px;
-            background: black;
-            display: flex;
-        
-        }
-    
-        
-        .find h1{
-            text-align: center;
-            padding:50px;
-        }
-     
-        .radio1{
-            text-align: center;
-        }
-    
-        
-        .radio2{
-            width:1980px;
-            margin:0 auto;
-        }
-        #input_p{
-            width:150px;
-            height: 30px;
-            margin: 0 auto;
-        }
-        .input_p{
-            width:250px;
-        }
-    
-        .input{
-            width:250px;
-            margin: 0 auto;
-        }
-        #input_ps{
-            display: flex;
-            
-        }
+       *{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    /* 모든 요소의 패딩, 마진, 상자 크기 설정 */
+}
 
-        #logo img{
+#wrap{
+    width: 1920px;
+    min-width: 900px;
+    /* 화면 너비 1920px, 최소 너비 900px로 설정 */
+}
+
+#header{
+    width: 1920px;
+    height: 150px;
+    background: black;
+    display: flex;
+    /* 헤더 스타일링 */
+}
+
+.find h1{
+    text-align: center;
+    padding: 50px;
+    /* 탐색 제목 스타일링 */
+}
+
+.radio1{
+    text-align: center;
+    /* 라디오 버튼 1 스타일링 */
+}
+
+.radio2{
+    width: 1980px;
+    margin: 0 auto;
+    /* 라디오 버튼 2 스타일링 */
+}
+
+#input_p{
+    width: 150px;
+    height: 30px;
+    margin: 0 auto;
+    /* 입력 파라미터 스타일링 */
+}
+
+.input_p{
+    width: 250px;
+    /* 입력 파라미터 스타일링 */
+}
+
+.input{
+    width: 250px;
+    margin: 0 auto;
+    /* 입력 필드 스타일링 */
+}
+
+#input_ps{
+    display: flex;
+    /* 입력 필드 스타일링 */
+}
+
+#logo img{
     width: 200px;
     height: 150px;
+    /* 로고 이미지 스타일링 */
 }
+
     </style>
     
     </head>
     <body>
+        <!-- 헤더 전체적인 wrap-->
         <div id="wrap">
             <header id="header">
-        
-                <div id="logo">
-                    <a href="index.html">
-                        <img src="./image/logo.png">
-                    </a>
-                </div>
-                
-            </header>
-            
-        <div class="find">
-            <h1>비밀번호 찾기</h1>
-    
+        <!-- 로고-->
+        <div id="logo">
+            <a href="index.html">
+                <img src="./image/logo.png">
+            </a>
         </div>
+        
+    </header>
+    
+    <div class="find">
+        <h1>비밀번호 찾기</h1>
+        
+    </div>
+    
+    <!--비밀번호 찾기 입력 영역-->
+    <div class="input">
+        
+        <div class="input_p">
+            <input type="text" id="input_p" placeholder="아이디">
+        </div>
+        
+        <div class="input_p">    
+            <input type="text" id="input_n" placeholder="휴대폰번호">
+            <button id="input_request">인증번호요청하기</button>
+            <button id="input_ps">인증하기</button>
+        </div>
+        
+    </div>     
+    
+    
+    
+    
+</body>
+</html>
 
-        <div class="input">
+<script>
+    window.addEventListener('DOMContentLoaded', function () {
+        var requestButton = document.getElementById('input_request');
+            requestButton.addEventListener('click', handleRequestButton);
 
-            <div class="input_p">
-                <input type="text" id="input_p" placeholder="아이디">
-            </div>
-            
-            <div class="input_p">    
-                <input type="text" id="input_p" placeholder="휴대폰번호">
-                <button id="input_ps">인증번호요청하기</button>
-                <button id="input_ps">인증하기</button>
-            </div>
-    
-       </div>     
-           
-    
-    
-    </body>
-    </html>
+            var verifyButton = document.getElementById('input_ps');
+            verifyButton.addEventListener('click', handleVerifyButton);
+        });
+
+        function handleRequestButton(event) {
+            event.preventDefault();
+            var phoneInput = document.getElementById('input_n');
+            var phoneValue = phoneInput.value;
+
+            if (!phoneValue) {
+                alert('휴대폰 번호를 입력해주세요!');
+            } else {
+                simulateSendingMessage(phoneValue);
+            }
+        }
+
+        function handleVerifyButton(event) {
+            event.preventDefault();
+            var idInput = document.getElementById('input_p');
+            var phoneInput = document.getElementById('input_n');
+
+            var idValue = idInput.value;
+            var phoneValue = phoneInput.value;
+
+            if (!idValue || !phoneValue) {
+                alert('아이디와 휴대폰 번호를 입력해주세요!');
+            } else {
+                alert('아이디: ' + idValue + '\n휴대폰 번호: ' + phoneValue + '\n비밀번호가 휴대폰 번호로 전송되었습니다.');
+            }
+        }
+
+        function simulateSendingMessage(phoneNumber) {
+            // 이 부분은 서버 측의 기능으로 대체되어야 합니다.
+            alert('휴대폰 번호 ' + phoneNumber + '로 인증 메시지를 전송했습니다.');
+        }
+    </script>

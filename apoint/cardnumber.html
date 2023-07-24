@@ -19,50 +19,43 @@
         }
     </script>
     <style>
-
-*{
+        *{
             padding:0;
             margin: 0;
-            box-sizing: border-box;
-        }
-        
-        
+            box-sizing: border-box;/*box-sizing:요소의 너비와 높이를 균일하게 유지해주는 편리한 속성*/
+        } 
         #wrap{
             width:1920px;
             min-width:900px;
             
         }
-        
         #header{
             
             width: 1920px;
             height: 150px;
             background: black;
-            display: flex;
-           
+            display: flex;/*레이아웃배치, 가로방향으로 배치되고, 자신이 가진 너비만큼만 지정된다.*/    
         }
         #bt{
             width:50px;
             height: 50px;
             display: flex;
-            align-items: center;
-            
+            align-items: center;  
         }
         #bt button{
             background:blue;
             color:white;
             width:100px;
             height: 50px;
-            font-size: 25px;
-           
+            font-size: 25px;  
         }
         .cardradio{
-            display: flex;
+            display: flex;/*레이아웃배치, 가로방향으로 배치되고, 자신이 가진 너비만큼만 지정된다.*/
             justify-content: center;
             gap:100px;
         }
         .checklist{
-          display: flex;
+          display: flex;/*레이아웃배치, 가로방향으로 배치되고, 자신이 가진 너비만큼만 지정된다.*/
           justify-content: center;
         }
         .cardcheck{
@@ -74,7 +67,6 @@
             text-align: center;
             margin-top:50px;
         }
-        
         #bt{
             margin: 0 auto;
             width: 100px;
@@ -85,37 +77,35 @@
         }
         .list{
           margin-top:50px;
-          display: flex;
+          display: flex;/*레이아웃배치, 가로방향으로 배치되고, 자신이 가진 너비만큼만 지정된다.*/
           align-items: center;
           gap: 30px;
           padding: 28px;
-          flex-direction: column;
+          flex-direction: column;/*컨테이너 내부의 아이템을 열 방향으로 배치*/
         }
          #logo img{
             width: 200px;
             height: 150px;
         }
-
 </style>        
 </head>
 <body>
     <div id="wrap">
         <header id="header">
-        
+        <!--로고이미지 클릭시 메인화면으로 이동-->
             <div id="logo">
                 <a href="index.html">
                     <img src="./image/logo.png">
                 </a>
             </div>
         </header>
-        
-
+        <!--결제수단선택부분-->
         <h1>결제수단 등록</h1>
         <div class="cardnumberadd">
             <div class="cardradio">
-              <label><input type="radio"></input>신용/체크카드</label>   
-              <label><input type="radio"></input>계좌</label>   
-              <label><input type="radio"></input>휴대폰</label>  
+                <label><input type="radio" name="paymentMethod"></input>신용/체크카드</label>
+                <label><input type="radio" name="paymentMethod"></input>계좌</label>
+                <label><input type="radio" name="paymentMethod"></input>휴대폰</label>
             </div>
             <div class="checklist">
               <div class="cardcheck">
@@ -124,6 +114,7 @@
                   <input type="checkbox"></input>
                   <input type="checkbox"></input>
               </div>
+              <!--동의 선택 부분-->
               <div class="list">
                 <label>전자 금융 거래 이용약관 동의 (필수)</label>
                 <label>개인정보 수집 및 이용동의 (필수)</label>
@@ -131,11 +122,10 @@
                 <label>개인정보처리방침(필수)</label>
               </div>
             </div>
+            <!--확인버튼부분-->
             <div id="bt">
                   <button>확인</button>   
             </div>
         </div>
-
-
 </body>
 </html>

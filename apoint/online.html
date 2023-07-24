@@ -10,56 +10,61 @@
     padding:0;
     margin: 0;
     box-sizing: border-box;
+    /* 모든 요소의 패딩, 마진, 상자 크기 설정 */
 }
 
-
 #wrap{
-    width:1920px;
-    min-width:900px;
-    
+    width: 1920px;
+    min-width: 900px;
+    /* 화면 너비 1920px, 최소 너비 900px로 설정 */
 }
 
 #header{
-    
     width: 1920px;
     height: 150px;
     background: black;
     display: flex;
-   
+    /* 헤더 스타일링 */
 }
 
 #on_store{
-    width:1600px;
+    width: 1600px;
     height: 2000px;
-    margin:0 auto;
-    padding:150px;
+    margin: 0 auto;
+    padding: 150px;
+    /* 온라인 상점 스타일링 */
 }
 
 #store tr{
     border: 1px solid black;
-    width:1200px;
+    width: 1200px;
     height: 200px;
+    /* 상점 테이블 행 스타일링 */
 }
 
 #store td{
     /* border: 1px solid black; */
-    width:200px;
+    width: 200px;
     height: 50px;
+    /* 상점 테이블 셀 스타일링 */
 }
+
 h1{
     text-align: center;
-    padding:50px;
+    padding: 50px;
+    /* 제목 스타일링 */
 }
-
 
 #store tr td img{
-    width:183px;
+    width: 183px;
     height: 80px;
-    
+    /* 상점 로고 이미지 스타일링 */
 }
+
 #logo img{
     width: 200px;
     height: 150px;
+    /* 로고 이미지 스타일링 */
 }
 
 
@@ -70,6 +75,9 @@ h1{
 
 
 <body>
+
+
+    <!-- 헤더 전체적인 wrap-->
     <div id="wrap">
         <header id="header">
         
@@ -79,6 +87,9 @@ h1{
                 </a>
             </div>
         </header>
+
+
+        <!-- 온라인 가맹점 아이템-->
         <div id="on_store">
             <h1>온라인 가맹점</h1>    
             <table id="store">

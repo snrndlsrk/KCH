@@ -5,72 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입완료창</title>
     <style>
-        *{
-            padding:0; 
-            margin:0; 
-            box-sizing: border-box;
-            background: url("./image/1.png");
-        }
-        #wrap{
-            width:1980px;
-        }
-        #header{
-            
-            width: 1980px;
-            height: 150px;
-            background: black;
-            display: flex;
-        
-        }
-        .find{
-            width:1920px;
-            margin-top:300px;
-            text-align: center;
-            color:white;
-        }
-        #button{
-            display:flex;
-            width: 100%;
-            justify-content: center;
-            
-        }
-        .bt{
-            width: 188px;
-            height: 86px;
-            margin-right: 45px;
-            font-size: 20px;
-            color: #fff;
-            opacity: 0.9;
-        }
-        .bt:nth-child(1){
-            background: #082A83;
-        }
+       *{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    background: url("./image/1.png");
+    background-repeat: no-repeat;
+    background-image: 100%;
+}
 
-        #logo img{
+#wrap{
+    width: 1980px;
+}
+
+#header{
+    width: 1980px;
+    height: 150px;
+    background: black;
+    display: flex;
+    position: relative; /* 로고와 배경 이미지를 위한 상대 위치 설정 */
+} 
+
+.find{
+    width: 1920px;
+    margin-top: 300px;
+    text-align: center;
+    color: white;
+    background: none;
+}
+
+.find h1{
+    background: none;
+}
+
+#button{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    background: none;
+}
+
+.bt{
+    width: 233px;
+    height: 86px;
+    margin-right: 45px;
+    font-size: 20px;
+    color: #fff;
+    opacity: 0.9;
+    background: #082A83;
+}
+
+.bt:nth-child(2){
+    background: white;
+    color: black;
+    background: none;
+}
+
+#logo img{
     width: 200px;
     height: 150px;
+    background: black;
+    position: absolute; /* 로고를 절대 위치로 설정 */
+    top: 0; /* 로고를 상단에 위치시킴 */
+    left: 0; /* 로고를 왼쪽에 위치시킴 */
+    z-index: 1; /* 로고의 z-index를 높여 배경 이미지 위에 표시될 수 있도록 함 */
 }
+
+     
     </style>
 </head>
 <body>
+    <!-- wrap-->
     <div id="wrap">
+        <!-- header-->
         <header id="header">
             
+            <!-- logo-->
             <div id="logo">
                 <a href="index.html">
                     <img src="./image/logo.png">
                 </a>
             </div>
-
+        </header>
+        
+        <!-- userjoin.html 에서 데이터를 가져옴-->
         <div class="find">
-            <h1>TEST 님!</h1>
-            <h1>회원가입이 완료되었습니다.</h1>
-       
-        <div id="button">
-            <button class="bt">로그인하러가기</button>
-            <button class="bt">메인화면으로</button>
+            <h1 id="completion_message">님, 회원가입이 완료되었습니다.</h1>
+            
+            <!-- 버튼 클릭 시 페이지 이동 -->
+            <div id="button">
+                <a href="login.html"><button  class="bt">로그인하러가기</button></a>
+                <a href="index.html"><button class="bt">메인화면으로</button></a>
+            </div>
         </div>
+       
     </div>
-  </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            var queryString = window.location.search;
+            var urlParams = new URLSearchParams(queryString);
+            var id = urlParams.get('id');
+            
+            var completionMessage = document.getElementById('completion_message');
+            completionMessage.textContent = id + completionMessage.textContent;
+        });
+    </script>
 </body>
 </html>

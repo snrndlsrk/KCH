@@ -4,139 +4,180 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>아이디 찾기</title>
-<style>
-  * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-#wrap {
-  width: 1920px; /* Change the width to 100% to make it responsive */
- 
-}
-
-#header {
-  width: 1920px; /* Change the width to 100% to make it responsive */
-  height: 150px;
-  background: black;
-  display: flex;
-  justify-content: left; /* Center align the logo */
-}
-
-.find h1 {
-  text-align: center;
-  padding: 50px;
-}
-
-.radio1 {
-  width: 600px;
-  text-align: center;
-  padding-left: 75px;
-  margin: 0 auto; /* Center align the radio buttons */
-}
-
-.radio2 {
-  width: 600px;
-  text-align: left;
-  margin: 0 auto; /* Center align the radio buttons */
-  margin-right:500px;
-}
-
-#input_p {
-  width: 150px;
-  height: 30px;
-  margin: 0 auto;
-}
-
-.input_p {
-  width: 250px;
-  margin: 0 auto;
-}
-
-.input {
-  width: 250px;
-  margin: 0 auto;
-}
-
-#logo img {
-  width: 200px;
-  height: 150px;
-  display: flex;
-  align-items: left;
-}
-
-</style>
-
-</head>
-<body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      
+      #wrap {
+        width: 100%;
+      }
+      
+      #header {
+        width: 100%;
+        height: 150px;
+        background: black;
+        display: flex;
+        justify-content: left;
+      }
+      
+      .find h1 {
+        text-align: center;
+        padding: 50px;
+      }
+      
+      .radio1 {
+        width: 600px;
+        text-align: center;
+        padding-left: 75px;
+        margin: 0 auto;
+      }
+      
+      .radio2 {
+        width: 600px;
+        text-align: left;
+        margin: 0 auto;
+        margin-right: 500px;
+      }
+      
+      .input_p {
+        width: 250px;
+        margin: 0 auto;
+      }
+      
+      .input {
+        width: 250px;
+        margin: 0 auto;
+      }
+      
+      #logo img {
+        width: 200px;
+        height: 150px;
+        display: flex;
+        align-items: left;
+      }
+    </style>
+  </head>
+  <body>
     <div id="wrap">
-        <header id="header">
+      <header id="header">
+          <div id="logo">
+              <a href="index.html">
+                  <img src="./image/logo.png">
+              </a>
+          </div>
+      </header>
+  
+      <div class="find">
+          <h1>아이디 찾기</h1>
         
-            <div id="logo">
-                <a href="index.html">
-                    <img src="./image/logo.png">
-                </a>
-            </div>
-        </header>
-                    
-            
-       
-
-
-
-        
-    <div class="find">
-        <h1>아이디 찾기</h1>
-
-    <div class="radio1">
-    <input class="radio" type="radio">회원정보에 등록한 휴대전화번호로 인증하기</input>    
+          <div class="radio1">
+            <label>
+              <input class="radio" type="radio" name="verificationMethod" value="phone">
+              회원정보에 등록한 휴대전화번호로 인증하기
+            </label>
+          </div>
+          <!--이름,휴대폰번호,인증번호6자리 입력 부분-->
+          <div class="input">
+              <div class="input_p">
+                  <input type="text" id="nameInput" placeholder="이름">
+              </div>
+              
+              <div class="input_p">    
+                  <input type="text" id="phoneInput" placeholder="휴대폰번호">
+                  <button class="requestButton" id="phoneRequestButton">인증번호요청하기</button>
+              </div>
+  
+              <div class="input_p">    
+                  <input type="text" id="verificationCodeInput" placeholder="인증번호 6자리">
+                  <button class="verifyButton" id="phoneVerifyButton">인증하기</button>
+              </div>
+          </div>
+  
+          <div class="radio2">
+            <label>
+              <input class="radio" type="radio" name="verificationMethod" value="email">
+              본인 이메일로 인증하기
+            </label>
+          </div>
+  <!--인증번호부분-->
+          <div class="input">
+              <div class="input_p">
+                  <input type="text" id="nameInput" placeholder="이름">
+              </div>
+              
+              <div class="input_p">    
+                  <input type="text" id="emailInput" placeholder="이메일주소">
+                  <button class="requestButton" id="emailRequestButton">인증번호요청하기</button>
+              </div>
+  
+              <div class="input_p">    
+                  <input type="text" id="verificationCodeInput" placeholder="인증번호">
+                  <button class="verifyButton" id="emailVerifyButton">인증하기</button>
+              </div>
+          </div>
+      </div>
     </div>
+  
+    <script>
+      window.addEventListener('DOMContentLoaded', function () {
+        var radioButtons = document.querySelectorAll('.radio');
+        var requestButtons = document.querySelectorAll('.requestButton');
+        var verifyButtons = document.querySelectorAll('.verifyButton');
     
-    <div class="input">
-
-    <div class="input_p">
-        <input type="text" id="input_p" placeholder="이름">
-    </div>
+        for (var i = 0; i < radioButtons.length; i++) {
+          radioButtons[i].addEventListener('click', handleRadioButtonClick);
+        }
     
-    <div class="input_p">    
-        <input type="text" id="input_p" placeholder="휴대폰번호">
-        <button id="input_ps">인증번호요청하기</button>
-    </div>
-
-    <div class="input_p">    
-        <input type="text" id="input_p" placeholder="인증번호 6자리">
-        <button id="input_ps">인증하기</button>
-    </div>
-
-
-    <div class="radio2">
-        <input class="radio" type="radio">본인 이메일로 인증하기</input>
-        </div>
-        
-        <div class="input">
+        for (var j = 0; j < requestButtons.length; j++) {
+          requestButtons[j].addEventListener('click', handleRequestButtonClick);
+        }
     
-        <div class="input_p">
-            <input type="text" id="input_p" placeholder="이름">
-        </div>
-        
-        <div class="input_p">    
-            <input type="text" id="input_p" placeholder="이메일주소">
-            <button id="input_ps">인증번호요청하기</button>
-        </div>
+        for (var k = 0; k < verifyButtons.length; k++) {
+          verifyButtons[k].addEventListener('click', handleVerifyButtonClick);
+        }
+      });
     
-        <div class="input_p">    
-            <input type="text" id="input_p" placeholder="인증번호">
-            <button id="input_ps">인증하기</button>
-        </div>
-
-    </div>
+      function handleRadioButtonClick(event) {
+        var radioButton = event.target;
+        var inputFields = radioButton.parentNode.parentNode.querySelectorAll('input[type="text"]');
+        var buttons = radioButton.parentNode.parentNode.querySelectorAll('button');
     
-
-    </div>
+        for (var i = 0; i < inputFields.length; i++) {
+          inputFields[i].value = ''; // 초기화
+          inputFields[i].disabled = !radioButton.checked; // 라디오 버튼 비교해서 입력인지 아닌지
+        }
     
-
-
-
-</body>
-</html>
+        for (var j = 0; j < buttons.length; j++) {
+          buttons[j].disabled = !radioButton.checked; // 라디오 버튼 비교해서 입력인지 아닌지
+        }
+      }
+    
+      function handleRequestButtonClick(event) {
+        var button = event.target;
+        var inputField = button.previousElementSibling;
+        var inputValue = inputField.value;
+    
+        if (!inputValue) {
+          alert('값을 입력해주세요!'); // 값이 비어있으면 알림표시
+        } else {
+          alert('인증번호 요청을 처리합니다: ' + inputValue); 
+        }
+      }
+    
+      function handleVerifyButtonClick(event) {
+        var button = event.target;
+        var inputField = button.previousElementSibling;
+        var inputValue = inputField.value;
+    
+        if (!inputValue) {
+          alert('값을 입력해주세요!'); // 값이 비어있으면 알림표시
+        } else {
+          alert('인증을 처리합니다: ' + inputValue);
+        }
+      }
+    </script>
+  </body>
+  </html>
